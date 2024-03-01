@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="employ_name" placeholder="name">
+    <input type="number" name="employ_number" placeholder="phone number">
+    <select name="employ_department">
+        {% for x in value %}
+        <option value="{{ x.department_id }}">{{ x.department_name}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">submit</button>
+
+</form>
+
+</body>
+</html>
